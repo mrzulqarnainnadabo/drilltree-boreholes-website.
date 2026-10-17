@@ -1,11 +1,12 @@
 ---
 import { business, navigation } from '../data/site';
+const logoSrc = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663328055562/tACNtmgZOqHLdtyy.webp";
 ---
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <a class="brand" href="/">
-        <img src="/images/drilltree-logo.webp" alt={`${business.name} logo`} width="140" height="42" />
+      <a class="brand" href="/" style="display:inline-block;margin-bottom:0.75rem;">
+        <img src={logoSrc} alt={`${business.name} logo`} width="140" height="42" style="height:38px;width:auto;" />
       </a>
       <p class="footer-location">{business.locationLine}</p>
       <p><a href={business.phoneHref}>{business.phoneDisplay}</a></p>
