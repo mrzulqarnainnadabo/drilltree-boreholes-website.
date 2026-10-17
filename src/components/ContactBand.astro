@@ -1,0 +1,12 @@
+---
+interface Props { title?: string; text?: string; }
+const { title = 'Let’s discuss your water project.', text = 'Share the site location and what the water is for. The business can confirm the next steps and the scope available for your enquiry.' } = Astro.props;
+---
+<section class="section section-white">
+  <div class="wrap">
+    <div class="cta-band">
+      <div><span class="eyebrow">A clear first step</span><h2>{title}</h2><p>{text}</p></div>
+      <a class="button" href="/contact/">Request a Quote <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
