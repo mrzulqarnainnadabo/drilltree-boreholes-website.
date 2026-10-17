@@ -1,0 +1,21 @@
+---
+const steps = [
+  { title: 'Make an enquiry', detail: 'Share your contact details and the general location of the property.' },
+  { title: 'Discuss the need', detail: 'Explain the intended water use, property type and any known site constraints.' },
+  { title: 'Consider the site', detail: 'The business can advise whether a site assessment or more information is needed.' },
+  { title: 'Clarify the scope', detail: 'Review the proposed work, inclusions, exclusions and quotation before deciding.' },
+  { title: 'Approve the work', detail: 'Work begins only after the scope and any required arrangements are agreed.' },
+  { title: 'Agree handover details', detail: 'Testing, equipment, handover and aftercare depend on what the written scope includes.' },
+];
+---
+<div class="process-steps">
+  {steps.map((step, index) => (
+    <div class="process-step">
+      <div class="step-number">{String(index + 1).padStart(2, '0')}</div>
+      <div>
+        <h3>{step.title}</h3>
+        <p>{step.detail}</p>
+      </div>
+    </div>
+  ))}
+</div>
