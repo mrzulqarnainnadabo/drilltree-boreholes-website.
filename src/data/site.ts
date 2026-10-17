@@ -17,12 +17,12 @@ export const primaryService = {
 
 export const navigation = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Our Process', href: '/process/' },
-  { label: 'Projects', href: '/projects/' },
-  { label: 'FAQs', href: '/faqs/' },
-  { label: 'Contact', href: '/contact/' },
+  { label: 'About', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Our Process', href: '/process' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'FAQs', href: '/faqs' },
+  { label: 'Contact', href: '/contact' },
 ] as const;
 
 export const faqs = [
