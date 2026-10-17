@@ -1,0 +1,18 @@
+I uploaded the ZIP of the existing Drilltree Boreholes Limited website source. Please review the whole project before proposing edits, then make a thoughtful, polished improvement pass that I can review and later apply to the existing Manus WebDev project. Do not rebuild from scratch unless you identify a specific reason and explain it first.
+
+PROJECT CONTEXT
+- This is an Astro static website for a borehole-drilling business listed in Kaduna, Nigeria. Source, routes, current visual direction and update instructions are in the ZIP.
+- Preserve the supplied original logo exactly as provided at brand-source/drilltree-logo-original.png; use the current optimized derivatives rather than redrawing or replacing the identity.
+- Keep the public contact details aligned with src/data/site.ts: +234 703 594 0927 and 13 Yakubu Ave, City Centre, Kaduna 800001, Kaduna, Nigeria.
+- Maintain the existing seven public routes and the complete static route manifest. Keep the enquiry journey transparent: it validates locally and prepares a WhatsApp draft for the visitor to review and send; it does not send/store a form submission automatically.
+
+WHAT TO IMPROVE
+Review the visual hierarchy, header/navigation, typography, responsive layout, information hierarchy, form usability and accessibility. Improve only where it clearly helps credibility, readability, mobile usability, enquiry completion or maintainability. Retain the grounded water/field-engineering feel, use the logo’s palette as an influence, and ensure the supplied logo remains legible. Make layouts work well on narrow phones, tablets and desktop.
+
+TRUTH AND BRANDING RULES
+- Do not invent or imply company history, founders, staff, licences, credentials, clients, project examples, testimonials/reviews, opening hours, years in business, prices, drilling depths, water yields, service guarantees, awards, regulatory approval or nationwide coverage. The current project intentionally uses cautious wording and an empty verified-projects state; preserve it unless the owner supplies evidence.
+- The only supported service category in the current source is borehole drilling. Do not add pump installation, storage, testing, treatment, maintenance or other offerings as confirmed services.
+- Inspect the editable source for any website-level “Powered by Manus”/Manus badge. If an application-owned badge is genuinely present and the owner can lawfully remove it, remove the visible badge from the public pages. Do not invent alternative credits.
+
+DELIVERABLE
+Return a clear summary of what you improved and why, a list of files you changed, and the full updated source ready for me to review.

@@ -1,0 +1,12 @@
+{
+  "routes": [
+    "/",
+    "/about/",
+    "/services/",
+    "/process/",
+    "/projects/",
+    "/faqs/",
+    "/contact/",
+    "/404"
+  ]
+}
