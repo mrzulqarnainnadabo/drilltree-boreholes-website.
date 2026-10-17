@@ -1,11 +1,11 @@
 ---
 import { business, navigation } from '../data/site';
+const logoSrc = "data:image/webp;base64,UklGRtJDAQBXRUJQVlA4IMZDAQBwAQWdASphA+UBPikSiEKhoSESmW0sGAKEs67N40ta4ckTbh8IeQpivZHA/CIkJoB4Axon8p/Un/M";
 ---
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
-      <img src="/images/drilltree-logo.webp" alt="" width="160" height="48" style="height:40px;width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-      <span style="display:none;font-weight:700;color:var(--ink);font-size:1.15rem;letter-spacing:-0.02em;">Drilltree</span>
+    <a class="brand" href="/" style="display:flex;align-items:center;gap:0.55rem;text-decoration:none;">
+      <img src={logoSrc} alt={`${business.name} logo`} width="160" height="48" style="height:42px;width:auto;" />
     </a>
     <nav class="primary-nav" aria-label="Primary">
       {navigation.map((item) => (
