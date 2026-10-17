@@ -3,39 +3,86 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageIntro from '../components/PageIntro.astro';
 import { business } from '../data/site';
 ---
-<BaseLayout title="Contact" description="Contact Drilltree Boreholes Limited in Kaduna for a borehole enquiry.">
-  <PageIntro eyebrow="Contact" title="Request a quotation discussion" description="Share the site location and intended water use. You can call, open WhatsApp, or prepare a draft message below." />
+<BaseLayout title="Contact" description="Contact Drilltree Boreholes Limited in Kaduna. Call, WhatsApp or prepare a quotation enquiry for your borehole project.">
+  <PageIntro 
+    eyebrow="Contact" 
+    title="Request a quotation discussion" 
+    description="Share the site location and intended water use. You can call, open WhatsApp, or prepare a draft message below." 
+  />
+
   <section class="section section-white">
     <div class="wrap">
       <div class="contact-grid">
+        <!-- Direct contact -->
         <div>
-          <h2>Talk to the business</h2>
-          <p><a class="button" href={business.phoneHref}>{business.phoneDisplay}</a></p>
-          <p><a class="button button-secondary" href={`https://wa.me/${business.whatsappNumber}`}>WhatsApp</a></p>
-          <p class="form-note">{business.address}</p>
+          <h2 style="margin-bottom:1.25rem;">Talk to the business</h2>
+          
+          <p style="margin-bottom:0.85rem;">
+            <a class="button" href={business.phoneHref} style="min-width:220px;justify-content:center;">
+              {business.phoneDisplay}
+            </a>
+          </p>
+          
+          <p style="margin-bottom:1.5rem;">
+            <a class="button button-secondary" href={`https://wa.me/${business.whatsappNumber}?text=${encodeURIComponent('Hello Drilltree, I would like to enquire about a borehole project.')}`} style="min-width:220px;justify-content:center;">
+              WhatsApp
+            </a>
+          </p>
+
+          <div style="padding:1.1rem 1.25rem;background:var(--mint-pale);border-radius:12px;border:1px solid var(--line);">
+            <p style="margin:0 0 0.35rem;font-weight:600;color:var(--ink);font-size:0.9rem;">Business address</p>
+            <p style="margin:0;color:var(--muted);font-size:0.95rem;line-height:1.5;">{business.address}</p>
+            <p style="margin:0.75rem 0 0;">
+              <a class="text-link" href={business.mapsHref} target="_blank" rel="noopener">Open in Google Maps →</a>
+            </p>
+          </div>
+
+          <p class="form-note" style="margin-top:1.25rem;">
+            Confirm current opening hours and exact service availability directly with the business.
+          </p>
         </div>
+
+        <!-- Enquiry form -->
         <div>
-          <h2>Prepare a WhatsApp draft</h2>
+          <h2 style="margin-bottom:0.5rem;">Prepare a WhatsApp draft</h2>
+          <p class="form-note" style="margin-bottom:1.25rem;">
+            This form does not send or store your details. It only prepares a message for you to review and send in WhatsApp.
+          </p>
+
           <form id="enquiry-form" class="enquiry-form">
-            <label>Your name<input type="text" name="name" required /></label>
-            <label>Phone or WhatsApp<input type="tel" name="phone" required /></label>
-            <label>Site location / area<input type="text" name="location" required /></label>
-            <label>Intended water use<textarea name="use" rows="3" required></textarea></label>
-            <button type="submit" class="button">Prepare WhatsApp message</button>
+            <label>
+              Your name
+              <input type="text" name="name" required placeholder="Full name" autocomplete="name" />
+            </label>
+            <label>
+              Phone or WhatsApp
+              <input type="tel" name="phone" required placeholder="e.g. 0803 123 4567" autocomplete="tel" />
+            </label>
+            <label>
+              Site location / area
+              <input type="text" name="location" required placeholder="Area, street or landmark in Kaduna" />
+            </label>
+            <label>
+              Intended water use
+              <textarea name="use" rows="3" required placeholder="Home, business, farm, school, etc."></textarea>
+            </label>
+            <button type="submit" class="button" style="margin-top:0.35rem;">
+              Prepare WhatsApp message
+            </button>
           </form>
-          <p class="form-note">This form does not send or store your details. It only prepares a message for you to review and send in WhatsApp.</p>
         </div>
       </div>
     </div>
   </section>
+
   <script>
     const form = document.getElementById('enquiry-form');
     if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const data = new FormData(form);
-        const text = `Hello Drilltree, I would like to enquire about a borehole project.\n\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nLocation: ${data.get('location')}\nIntended use: ${data.get('use')}`;
-        const url = `https://wa.me/2347035940927?text=${encodeURIComponent(text)}`;
+        const text = `Hello Drilltree Boreholes Limited,%0A%0AI would like to enquire about a borehole project.%0A%0AName: ${data.get('name')}%0APhone: ${data.get('phone')}%0ALocation: ${data.get('location')}%0AIntended use: ${data.get('use')}%0A%0APlease let me know the next steps.`;
+        const url = `https://wa.me/2347035940927?text=${text}`;
         window.open(url, '_blank');
       });
     }

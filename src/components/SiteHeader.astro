@@ -3,8 +3,9 @@ import { business, navigation } from '../data/site';
 ---
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <img src="/images/drilltree-logo.webp" alt={`${business.name} logo`} width="160" height="48" />
+    <a class="brand" href="/" style="display:flex;align-items:center;gap:0.6rem;text-decoration:none;">
+      <img src="/images/drilltree-logo.webp" alt="" width="160" height="48" style="height:40px;width:auto;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <span style="display:none;font-weight:700;color:var(--ink);font-size:1.15rem;letter-spacing:-0.02em;">Drilltree</span>
     </a>
     <nav class="primary-nav" aria-label="Primary">
       {navigation.map((item) => (

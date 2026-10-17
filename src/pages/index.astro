@@ -5,37 +5,74 @@ import FaqList from '../components/FaqList.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import { business, primaryService } from '../data/site';
 
-const description = 'Discuss a borehole drilling project in Kaduna with Drilltree Boreholes Limited. Share the site location and intended water use to start a quotation conversation.';
+const description = 'Professional borehole drilling in Kaduna. Discuss your site, water needs and project scope with Drilltree Boreholes Limited.';
 ---
-<BaseLayout title="Borehole drilling in Kaduna" description={description}>
+<BaseLayout title="Borehole Drilling in Kaduna" description={description}>
+  <!-- Hero -->
   <section class="hero">
     <div class="wrap hero-inner">
       <div class="hero-copy">
         <span class="eyebrow">Borehole drilling · Kaduna</span>
-        <h1>Borehole drilling, discussed with your site in mind.</h1>
-        <p class="lead">Planning a borehole for your home, property, business or institution? Discuss your site, water requirements and project scope with Drilltree Boreholes Limited.</p>
+        <h1>Reliable borehole drilling for homes, businesses and institutions</h1>
+        <p class="lead">
+          Planning a borehole in Kaduna? Share your site location and water requirements. 
+          Drilltree Boreholes Limited can discuss the scope and next steps with you.
+        </p>
         <div class="hero-actions">
           <a class="button button-primary" href="/contact">Request a Quote</a>
-          <a class="button button-secondary" href={business.phoneHref}>Call the business</a>
+          <a class="button button-secondary" href={business.phoneHref}>Call {business.phoneDisplay}</a>
         </div>
       </div>
       <div class="hero-art">
-        <img src="/images/borehole-field-illustration.svg" width="1200" height="800" alt="Illustrative borehole field diagram" />
+        <img 
+          src="/images/borehole-field-illustration.svg" 
+          width="1200" 
+          height="800" 
+          alt="Illustrative borehole field diagram – not a project photograph" 
+        />
       </div>
     </div>
   </section>
+
+  <!-- Process -->
   <section class="section section-white">
     <div class="wrap">
-      <div class="section-heading"><span class="eyebrow">How it works</span><h2>A clear enquiry process</h2></div>
+      <div class="section-heading">
+        <span class="eyebrow">How it works</span>
+        <h2>A clear enquiry process</h2>
+        <p class="lead">From first contact to agreed scope — no assumptions, just clear steps.</p>
+      </div>
       <ProcessSteps />
     </div>
   </section>
-  <ContactBand />
+
+  <!-- Service focus -->
   <section class="section section-soft">
     <div class="wrap">
-      <div class="section-heading"><span class="eyebrow">Common questions</span><h2>FAQs</h2></div>
+      <div class="section-heading">
+        <span class="eyebrow">Service focus</span>
+        <h2>{primaryService.title}</h2>
+      </div>
+      <p class="lead" style="max-width:40rem;">{primaryService.summary}</p>
+      <p style="margin-top:1.25rem;">
+        <a class="text-link" href="/services">Learn more about the service →</a>
+      </p>
+    </div>
+  </section>
+
+  <ContactBand />
+
+  <!-- FAQs -->
+  <section class="section section-white">
+    <div class="wrap">
+      <div class="section-heading">
+        <span class="eyebrow">Common questions</span>
+        <h2>Frequently asked questions</h2>
+      </div>
       <FaqList limit={4} />
-      <p style="margin-top:1.5rem"><a class="text-link" href="/faqs">View all FAQs →</a></p>
+      <p style="margin-top:1.75rem;">
+        <a class="text-link" href="/faqs">View all FAQs →</a>
+      </p>
     </div>
   </section>
 </BaseLayout>
