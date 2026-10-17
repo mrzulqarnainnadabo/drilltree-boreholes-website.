@@ -28,16 +28,16 @@ import { business } from '../data/site';
       </div>
     </div>
   </section>
+  <script>
+    const form = document.getElementById('enquiry-form');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const text = `Hello Drilltree, I would like to enquire about a borehole project.\n\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nLocation: ${data.get('location')}\nIntended use: ${data.get('use')}`;
+        const url = `https://wa.me/2347035940927?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+      });
+    }
+  </script>
 </BaseLayout>
-<script>
-  const form = document.getElementById('enquiry-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const text = `Hello Drilltree, I would like to enquire about a borehole project.\n\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nLocation: ${data.get('location')}\nIntended use: ${data.get('use')}`;
-      const url = `https://wa.me/2347035940927?text=${encodeURIComponent(text)}`;
-      window.open(url, '_blank');
-    });
-  }
-</script>
