@@ -1,0 +1,11 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import ContactBand from '../components/ContactBand.astro';
+---
+<BaseLayout title="Our Process" description="How a borehole enquiry with Drilltree typically progresses.">
+  <PageIntro eyebrow="Process" title="From enquiry to agreed scope" description="A clear sequence helps both sides understand the project before work begins." />
+  <section class="section section-white"><div class="wrap"><ProcessSteps /></div></section>
+  <ContactBand />
+</BaseLayout>

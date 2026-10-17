@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { business } from '../data/site';
+---
+<BaseLayout title="About" description={`About ${business.name} in Kaduna.`>
+  <PageIntro eyebrow="About the business" title="About Drilltree" description="A borehole-drilling business based in Kaduna. Confirm current details, scope and next steps directly with the business." />
+  <section class="section section-white">
+    <div class="wrap prose">
+      <p>{business.name} is listed in Kaduna, Nigeria. This website helps visitors prepare a clear enquiry about a borehole project.</p>
+      <p>All project details, available services and quotations should be confirmed directly with the business.</p>
+    </div>
+  </section>
+  <ContactBand />
+</BaseLayout>

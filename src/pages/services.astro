@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { primaryService } from '../data/site';
+---
+<BaseLayout title="Services" description="Borehole drilling enquiry information for Drilltree Boreholes Limited.">
+  <PageIntro eyebrow="Services" title="Borehole drilling" description={primaryService.summary} />
+  <section class="section section-white">
+    <div class="wrap prose">
+      <p>The service category associated with the listing is borehole drilling. Confirm the exact work, equipment and any related items available for your project when you speak with the business.</p>
+      <p>Do not assume pumps, storage, testing or other work are included unless they appear in the written scope.</p>
+    </div>
+  </section>
+  <ContactBand />
+</BaseLayout>

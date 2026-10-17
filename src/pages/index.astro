@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactBand from '../components/ContactBand.astro';
+import FaqList from '../components/FaqList.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import { business, primaryService } from '../data/site';
+
+const description = 'Discuss a borehole drilling project in Kaduna with Drilltree Boreholes Limited. Share the site location and intended water use to start a quotation conversation.';
+---
+<BaseLayout title="Borehole drilling in Kaduna" description={description}>
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">Borehole drilling · Kaduna</span>
+        <h1>Borehole drilling, discussed with your site in mind.</h1>
+        <p class="lead">Planning a borehole for your home, property, business or institution? Discuss your site, water requirements and project scope with Drilltree Boreholes Limited.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/contact/">Request a Quote</a>
+          <a class="button button-secondary" href={business.phoneHref}>Call the business</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="/images/borehole-field-illustration.svg" width="1200" height="800" alt="Illustrative borehole field diagram" />
+      </div>
+    </div>
+  </section>
+  <section class="section section-white">
+    <div class="wrap">
+      <div class="section-heading"><span class="eyebrow">How it works</span><h2>A clear enquiry process</h2></div>
+      <ProcessSteps />
+    </div>
+  </section>
+  <ContactBand />
+  <section class="section section-soft">
+    <div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Common questions</span><h2>FAQs</h2></div>
+      <FaqList limit={4} />
+      <p style="margin-top:1.5rem"><a class="text-link" href="/faqs/">View all FAQs →</a></p>
+    </div>
+  </section>
+</BaseLayout>

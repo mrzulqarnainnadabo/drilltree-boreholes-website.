@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import { business } from '../data/site';
+---
+<BaseLayout title="Contact" description="Contact Drilltree Boreholes Limited in Kaduna for a borehole enquiry.">
+  <PageIntro eyebrow="Contact" title="Request a quotation discussion" description="Share the site location and intended water use. You can call, open WhatsApp, or prepare a draft message below." />
+  <section class="section section-white">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <h2>Talk to the business</h2>
+          <p><a class="button" href={business.phoneHref}>{business.phoneDisplay}</a></p>
+          <p><a class="button button-secondary" href={`https://wa.me/${business.whatsappNumber}`}>WhatsApp</a></p>
+          <p class="form-note">{business.address}</p>
+        </div>
+        <div>
+          <h2>Prepare a WhatsApp draft</h2>
+          <form id="enquiry-form" class="enquiry-form">
+            <label>Your name<input type="text" name="name" required /></label>
+            <label>Phone or WhatsApp<input type="tel" name="phone" required /></label>
+            <label>Site location / area<input type="text" name="location" required /></label>
+            <label>Intended water use<textarea name="use" rows="3" required></textarea></label>
+            <button type="submit" class="button">Prepare WhatsApp message</button>
+          </form>
+          <p class="form-note">This form does not send or store your details. It only prepares a message for you to review and send in WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+<script>
+  const form = document.getElementById('enquiry-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const text = `Hello Drilltree, I would like to enquire about a borehole project.\n\nName: ${data.get('name')}\nPhone: ${data.get('phone')}\nLocation: ${data.get('location')}\nIntended use: ${data.get('use')}`;
+      const url = `https://wa.me/2347035940927?text=${encodeURIComponent(text)}`;
+      window.open(url, '_blank');
+    });
+  }
+</script>

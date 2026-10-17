@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { projects } from '../data/projects';
+---
+<BaseLayout title="Projects" description="Verified project examples from Drilltree Boreholes Limited.">
+  <PageIntro eyebrow="Projects" title="Project portfolio" description="Only verified and approved project records appear here." />
+  <section class="section section-white">
+    <div class="wrap">
+      {projects.length === 0 ? (
+        <p class="lead">Project portfolio coming soon. Contact the business to discuss your site.</p>
+      ) : (
+        <div class="project-grid">
+          {projects.map((p) => (
+            <article class="project-card">
+              <h3>{p.title}</h3>
+              <p>{p.location} · {p.type}</p>
+              <p>{p.scope}</p>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+  <ContactBand />
+</BaseLayout>
